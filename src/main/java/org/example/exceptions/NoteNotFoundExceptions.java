@@ -1,6 +1,6 @@
 package org.example.exceptions;
 
-public class NoteNotFoundExceptions extends Exception {
+public class NoteNotFoundExceptions extends NotesException {
     public NoteNotFoundExceptions() {
     }
 
@@ -10,9 +10,5 @@ public class NoteNotFoundExceptions extends Exception {
 
     public NoteNotFoundExceptions(String message, Throwable cause) {
         super(message, cause);
-    }
-
-    public NoteNotFoundExceptions(Throwable cause) {
-        super(cause);
     }
 }

@@ -1,16 +1,18 @@
 package org.example.models.noteStorage;
 
-import org.example.exceptions.NoteNotFoundExceptions;
+import org.example.exceptions.NotesException;
 import org.example.models.Note;
 
 import java.util.List;
 
-public interface NoteStorage {
-    void add(Note note);
+public abstract class NoteStorage {
+    abstract public void add(Note note);
 
-    void edit(Note oldNote, Note newNote) throws NoteNotFoundExceptions;
+    abstract public void edit(int index, String text) throws NotesException;
 
-    void remove(Note note) throws NoteNotFoundExceptions;
+    abstract public Note remove(int index) throws NotesException;
 
-    List<Note> showAll();
+    abstract public List<Note> getAll();
+
+    abstract public Note getNote(int index) throws NotesException;
 }

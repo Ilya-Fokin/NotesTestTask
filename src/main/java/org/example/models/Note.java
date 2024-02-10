@@ -1,14 +1,21 @@
 package org.example.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+import java.time.LocalDate;
+import java.util.Date;
+
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Note {
+    @NonNull
+    private String title;
+    @NonNull
     private String text;
+    private LocalDate date;
+
+    {
+        this.date = LocalDate.now();
+    }
 }
